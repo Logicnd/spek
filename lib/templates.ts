@@ -2,6 +2,9 @@ export interface TemplateSpec {
   id: string;
   name: string;
   category: string;
+  targetRole: string;
+  summary: string;
+  recommendedTab: "markdown" | "quill" | "datagrid";
   markdown: string;
 }
 
@@ -9,7 +12,10 @@ export const TEMPLATES: Record<string, TemplateSpec> = {
   incident: {
     id: "incident",
     name: "Incident Runbook",
-    category: "Operations",
+    category: "DevOps & IT",
+    targetRole: "Sysadmins, DevOps & Support Leads",
+    summary: "Production emergency guide with diagnostic curl commands, failover protocols, and P99 latency bar charts.",
+    recommendedTab: "markdown",
     markdown: `# INC-2026-9042: Edge Gateway P99 Latency Spike & Failover Runbook
 
 > **INCIDENT METADATA**
@@ -80,7 +86,10 @@ If latency does not normalize within 10 minutes post-drain:
   rfc: {
     id: "rfc",
     name: "Architecture RFC",
-    category: "Architecture",
+    category: "Systems Architecture",
+    targetRole: "Principal Engineers & Tech Leads",
+    summary: "Request for Comments specification detailing mutual TLS security, consensus latency models, and Architectural Decision Records (ADR).",
+    recommendedTab: "markdown",
     markdown: `# RFC-089: Zero-Trust Global Mesh & Distributed Ingress Architecture
 
 - **Author**: Platform Architecture Working Group (architect@corp.internal)
@@ -139,7 +148,10 @@ $$T_{\\text{verify}} \\le 0.450\\text{ms}$$
   sla: {
     id: "sla",
     name: "SLA & Performance Report",
-    category: "Business & IT",
+    category: "Business & Management",
+    targetRole: "Business Owners, Executives & IT Managers",
+    summary: "Clear executive uptime report comparing quarterly targets against actuals, budget depletion rates, and PDF-ready compliance summaries.",
+    recommendedTab: "quill",
     markdown: `# Q3 Infrastructure Reliability & Multi-Region SLA Telemetry Report
 
 **Reporting Period**: 2026-Q3 (July 1 – September 30)  
@@ -192,7 +204,10 @@ Audit verification executed from monitoring server \`172.16.254.1\` with reporti
   readme: {
     id: "readme",
     name: "README Spec",
-    category: "Development",
+    category: "Developers & Newbies",
+    targetRole: "Engineers, Students & Contributors",
+    summary: "Clear starter spec showing how to use Markdown, embed KaTeX formulas, render D3 graphs, and redact API keys.",
+    recommendedTab: "markdown",
     markdown: `# Spek — Industrial Offline-First Technical Workbench
 
 Spek is a high-density, zero-marketing runbook, architecture RFC, and data report workbench engineered for developers, sysadmins, IT operations, and digital business leaders.
@@ -228,4 +243,3 @@ $$\\mathcal{O}(L + K + R)$$
 Where $L$ is line count, $K$ is KaTeX formula occurrences, and $R$ is regex scrub passes.`,
   },
 };
-

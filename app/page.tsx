@@ -28,11 +28,14 @@ import {
   Info,
   X,
   ExternalLink,
+  HelpCircle,
+  Compass,
 } from "lucide-react";
 
 import { MarkdownEditor } from "../components/MarkdownEditor";
 import { PreviewPane, compileMarkdownToHtml } from "../components/PreviewPane";
 import { DataGrid } from "../components/DataGrid";
+import { HelpDrawer } from "../components/HelpDrawer";
 import { TEMPLATES } from "../lib/templates";
 import { scrubDocument, formatAuditTrailCSV, ScrubResult } from "../lib/scrubber";
 import {
@@ -85,6 +88,7 @@ function WorkbenchMain() {
   const [showExportMenu, setShowExportMenu] = useState<boolean>(false);
   const [showTemplateMenu, setShowTemplateMenu] = useState<boolean>(false);
   const [showAuditDrawer, setShowAuditDrawer] = useState<boolean>(false);
+  const [showHelpDrawer, setShowHelpDrawer] = useState<boolean>(false);
 
   // Network & PWA status
   const [isOnline, setIsOnline] = useState<boolean>(true);
@@ -210,6 +214,27 @@ function WorkbenchMain() {
         event: "template_loaded",
         template_name: t.name,
       });
+    }
+  };
+
+  // Role Adaptor for Newbies, Executives, Architects & DevOps
+  const handleSelectRole = (role: "business" | "devops" | "architect" | "student") => {
+    if (role === "business") {
+      handleSelectTemplate("sla");
+      setActiveTab("quill");
+      setViewMode("split");
+    } else if (role === "devops") {
+      handleSelectTemplate("incident");
+      setActiveTab("markdown");
+      setViewMode("split");
+    } else if (role === "architect") {
+      handleSelectTemplate("rfc");
+      setActiveTab("markdown");
+      setViewMode("split");
+    } else if (role === "student") {
+      handleSelectTemplate("readme");
+      setActiveTab("quill");
+      setViewMode("split");
     }
   };
 
@@ -351,25 +376,48 @@ function WorkbenchMain() {
             </button>
 
             {showTemplateMenu && (
-              <div className="absolute left-0 top-full mt-1 w-64 bg-spek-elevated border border-spek-border shadow-2xl rounded-sm z-50 py-1">
-                <div className="px-3 py-1 text-[10px] text-spek-dim uppercase tracking-wider border-b border-spek-border">
-                  ARCHITECTURAL TEMPLATES
+              <div className="absolute left-0 top-full mt-1 w-80 bg-spek-elevated border border-spek-border shadow-2xl rounded-sm z-50 py-1 font-mono text-xs">
+                <div className="px-3 py-1.5 text-[10px] text-spek-dim uppercase tracking-wider border-b border-spek-border flex justify-between items-center">
+                  <span>DOCUMENT TEMPLATES</span>
+                  <span>SELECT BY ROLE</span>
                 </div>
                 {Object.values(TEMPLATES).map((tmpl) => (
                   <button
                     key={tmpl.id}
                     onClick={() => handleSelectTemplate(tmpl.id)}
-                    className={`w-full text-left px-3 py-1.5 flex items-center justify-between hover:bg-spek-subtle transition-colors text-xs ${
-                      selectedTemplateId === tmpl.id ? "text-spek-emerald bg-spek-subtle/50" : "text-spek-text"
+                    className={`w-full text-left px-3 py-2 flex flex-col hover:bg-spek-subtle transition-colors border-b border-spek-border/40 last:border-b-0 ${
+                      selectedTemplateId === tmpl.id ? "bg-spek-subtle/50" : ""
                     }`}
                   >
-                    <span>{tmpl.name}</span>
-                    <span className="text-[10px] text-spek-dim">{tmpl.category}</span>
+                    <div className="flex items-center justify-between">
+                      <span className={`text-xs font-semibold ${selectedTemplateId === tmpl.id ? "text-spek-emerald" : "text-white"}`}>
+                        {tmpl.name}
+                      </span>
+                      <span className="text-[10px] px-1.5 py-0.2 bg-spek-panel border border-spek-border text-spek-muted rounded">
+                        {tmpl.category}
+                      </span>
+                    </div>
+                    <div className="text-[11px] text-spek-dim mt-0.5">
+                      For: <span className="text-spek-muted">{tmpl.targetRole}</span>
+                    </div>
+                    <div className="text-[10px] text-spek-dim line-clamp-1 mt-0.5">
+                      {tmpl.summary}
+                    </div>
                   </button>
                 ))}
               </div>
             )}
           </div>
+
+          {/* Quick Role Manual / Guide Trigger */}
+          <button
+            onClick={() => setShowHelpDrawer(true)}
+            className="flex items-center gap-1.5 px-2.5 py-1 bg-spek-emerald/10 hover:bg-spek-emerald/20 border border-spek-emerald/30 text-emerald-400 rounded-sm text-[11px] font-mono transition-colors"
+            title="Open Spek Field Manual & Role Guide (For Business, DevOps, Architects & Beginners)"
+          >
+            <HelpCircle className="w-3.5 h-3.5 text-spek-emerald" />
+            <span className="font-semibold">ROLE MANUAL</span>
+          </button>
         </div>
 
         {/* Center: Secret Scrubber Live Status */}
@@ -679,7 +727,14 @@ function WorkbenchMain() {
         </div>
       )}
 
-      {/* 4. BOTTOM STATUS BAR (24px height) */}
+      {/* 4. ROLE MANUAL & GUIDE DRAWER */}
+      <HelpDrawer
+        isOpen={showHelpDrawer}
+        onClose={() => setShowHelpDrawer(false)}
+        onSelectRole={handleSelectRole}
+      />
+
+      {/* 5. BOTTOM STATUS BAR (24px height) */}
       <footer className="h-[24px] min-h-[24px] bg-spek-panel border-t border-spek-border px-3 flex items-center justify-between text-[11px] font-mono z-30 select-none">
         {/* Offline Status & Telemetry Metrics */}
         <div className="flex items-center gap-3">
@@ -739,6 +794,12 @@ function WorkbenchMain() {
           <span className="text-spek-border">|</span>
 
           {/* Non-intrusive sponsor / architectural statement */}
+          <button
+            onClick={() => setShowHelpDrawer(true)}
+            className="text-[10px] text-emerald-400 hover:text-emerald-300 underline underline-offset-2 flex items-center gap-1"
+          >
+            [ ? FIELD MANUAL ]
+          </button>
           <span className="text-[10px] text-spek-dim">
             [SPEK v1.0 • ARCHITECTURE RUNBOOK WORKBENCH • ZERO CLOUD LEAKAGE]
           </span>

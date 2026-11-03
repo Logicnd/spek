@@ -231,15 +231,34 @@ export const DataGrid: React.FC<DataGridProps> = ({ onInjectMarkdown, onInjectCh
         {/* Preset Selectors */}
         <div className="flex items-center gap-1 text-[11px] font-mono">
           <span className="text-spek-dim mr-1">Presets:</span>
-          {Object.entries(PRESET_DATASETS).map(([key, p]) => (
-            <button
-              key={key}
-              onClick={() => handleLoadPreset(key)}
-              className="px-2 py-0.5 bg-spek-subtle hover:bg-spek-border text-spek-muted hover:text-white border border-spek-border rounded-sm transition-colors"
-            >
-              {p.name.split(" ")[0]}
-            </button>
-          ))}
+          <button
+            onClick={() => handleLoadPreset("latency")}
+            className="px-2 py-0.5 bg-spek-subtle hover:bg-spek-border text-spek-muted hover:text-white border border-spek-border rounded-sm transition-colors"
+            title="API Gateway Latency Metrics (DevOps & Engineering)"
+          >
+            Latency [DevOps]
+          </button>
+          <button
+            onClick={() => handleLoadPreset("incident")}
+            className="px-2 py-0.5 bg-spek-subtle hover:bg-spek-border text-spek-muted hover:text-white border border-spek-border rounded-sm transition-colors"
+            title="Incident Severity & MTTR Log (IT Operations)"
+          >
+            Incidents [IT]
+          </button>
+          <button
+            onClick={() => handleLoadPreset("infrastructure")}
+            className="px-2 py-0.5 bg-spek-subtle hover:bg-spek-border text-spek-muted hover:text-white border border-spek-border rounded-sm transition-colors"
+            title="Cloud Fleet & Monthly Cost Matrix (Business & Finance)"
+          >
+            Fleet Costs [Finance]
+          </button>
+          <button
+            onClick={() => handleLoadPreset("slo")}
+            className="px-2 py-0.5 bg-spek-subtle hover:bg-spek-border text-spek-muted hover:text-white border border-spek-border rounded-sm transition-colors"
+            title="Microservice SLO Availability (Leadership & SLA)"
+          >
+            SLO [Exec]
+          </button>
         </div>
 
         {/* Table Operations */}
@@ -384,14 +403,14 @@ export const DataGrid: React.FC<DataGridProps> = ({ onInjectMarkdown, onInjectCh
       {/* Raw CSV / JSON Input Area */}
       <div className="border-t border-spek-border bg-spek-bg p-2.5">
         <div className="flex items-center justify-between mb-1.5 text-[11px] font-mono text-spek-dim">
-          <span>PASTE RAW CSV OR JSON STREAM</span>
-          <span>Auto-parsed on edit</span>
+          <span>PASTE RAW CSV OR JSON STREAM (EXCEL / SHEETS / DATABASE)</span>
+          <span className="text-spek-emerald">Click "Inject Table" to place into document</span>
         </div>
         <textarea
           rows={3}
           value={rawInput}
           onChange={(e) => setRawInput(e.target.value)}
-          placeholder="Paste comma-separated values (CSV) or JSON array..."
+          placeholder="Paste comma-separated values (CSV) or JSON array directly from Excel, Sheets, or logs..."
           className="w-full bg-spek-panel border border-spek-border text-spek-text font-mono text-xs p-2 rounded-sm focus:outline-none focus:border-spek-blue resize-none"
         />
       </div>
