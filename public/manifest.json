@@ -1,0 +1,26 @@
+{
+  "name": "Spek — Technical Runbook & Architecture RFC Workbench",
+  "short_name": "Spek",
+  "description": "Industrial, offline-first Technical Runbook, Architecture RFC, and Data Report Workbench built for developers, sysadmins, and IT engineers.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["developer", "productivity", "utilities"]
+}
+

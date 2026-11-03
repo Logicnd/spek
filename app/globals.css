@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "katex/dist/katex.min.css";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #e5e5e5;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #e5e5e5;
+  font-family: var(--font-sans, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333333;
+}
+
+/* Spek Markdown Prose Preview Styling */
+.spek-preview-prose h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  border-bottom: 1px solid #262626;
+  padding-bottom: 0.4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.02em;
+}
+.spek-preview-prose h1:first-child {
+  margin-top: 0;
+}
+
+.spek-preview-prose h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f3f4f6;
+  border-bottom: 1px solid #262626;
+  padding-bottom: 0.3rem;
+  margin-top: 1.35rem;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.01em;
+}
+
+.spek-preview-prose h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e5e5e5;
+  margin-top: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.spek-preview-prose p {
+  margin-bottom: 0.85rem;
+  line-height: 1.65;
+  color: #e5e5e5;
+  font-size: 0.825rem;
+}
+
+.spek-preview-prose a {
+  color: #3b82f6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.spek-preview-prose ul {
+  list-style-type: disc;
+  padding-left: 1.35rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.825rem;
+}
+
+.spek-preview-prose ol {
+  list-style-type: decimal;
+  padding-left: 1.35rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.825rem;
+}
+
+.spek-preview-prose li {
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
+}
+
+.spek-preview-prose blockquote {
+  border-left: 2px solid #3b82f6;
+  background-color: rgba(59, 130, 246, 0.05);
+  padding: 0.6rem 0.85rem;
+  margin: 1rem 0;
+  color: #a3a3a3;
+  font-style: normal;
+  border-radius: 0 2px 2px 0;
+  font-size: 0.825rem;
+}
+
+.spek-preview-prose code {
+  font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, monospace;
+  font-size: 0.775rem;
+  background-color: #121212;
+  border: 1px solid #262626;
+  padding: 1px 4px;
+  border-radius: 2px;
+  color: #e5e5e5;
+}
+
+.spek-preview-prose pre {
+  background-color: #121212;
+  border: 1px solid #262626;
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.spek-preview-prose pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.75rem;
+  color: #f3f4f6;
+}
+
+.spek-preview-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-family: ui-monospace, "JetBrains Mono", SFMono-Regular, monospace;
+  font-size: 0.75rem;
+}
+
+.spek-preview-prose th {
+  background-color: #181818;
+  border: 1px solid #262626;
+  padding: 6px 10px;
+  text-align: left;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.spek-preview-prose td {
+  border: 1px solid #262626;
+  padding: 5px 10px;
+  color: #e5e5e5;
+}
+
+.spek-preview-prose tr:nth-child(even) td {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+.spek-preview-prose hr {
+  border: none;
+  border-top: 1px solid #262626;
+  margin: 1.5rem 0;
+}
+
+/* Quill Editor Dark Theme Overrides */
+.spek-quill-wrapper .ql-toolbar.ql-snow {
+  background-color: #181818 !important;
+  border: none !important;
+  border-bottom: 1px solid #262626 !important;
+  padding: 4px 8px !important;
+}
+
+.spek-quill-wrapper .ql-container.ql-snow {
+  border: none !important;
+  background-color: #121212 !important;
+  font-family: inherit !important;
+  font-size: 13px !important;
+  color: #e5e5e5 !important;
+}
+
+.spek-quill-wrapper .ql-editor {
+  padding: 1rem !important;
+  min-height: 100% !important;
+  color: #e5e5e5 !important;
+  line-height: 1.6 !important;
+}
+
+.spek-quill-wrapper .ql-snow .ql-stroke {
+  stroke: #a3a3a3 !important;
+}
+
+.spek-quill-wrapper .ql-snow .ql-fill {
+  fill: #a3a3a3 !important;
+}
+
+.spek-quill-wrapper .ql-snow .ql-picker {
+  color: #a3a3a3 !important;
+}
+
+.spek-quill-wrapper .ql-snow .ql-picker-options {
+  background-color: #181818 !important;
+  border: 1px solid #262626 !important;
+}
+
+.spek-quill-wrapper .ql-snow .ql-picker-item:hover,
+.spek-quill-wrapper .ql-snow button:hover .ql-stroke {
+  stroke: #ffffff !important;
+}
+
+.spek-quill-wrapper .ql-snow button:hover .ql-fill {
+  fill: #ffffff !important;
+}
+
+.spek-quill-wrapper .ql-editor.ql-blank::before {
+  color: #737373 !important;
+  font-style: normal !important;
+}
+
