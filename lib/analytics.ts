@@ -50,7 +50,7 @@ export function trackEvent(payload: AnalyticsEvent): void {
   window.dataLayer.push({
     ...payload,
     timestamp: new Date().toISOString(),
-    spek_version: "1.0.0",
+    speik_version: "1.0.0",
     client_offline: !navigator.onLine,
   });
 }
@@ -135,7 +135,7 @@ export function compileDocumentAuditJSON(
   auditTrail: ScrubAuditEntry[]
 ): string {
   const auditReport = {
-    spek_audit_version: "1.0.0",
+    speik_audit_version: "1.0.0",
     compliance_standard: "SOC2-TypeII-Offline-Scrubber",
     exported_at: new Date().toISOString(),
     document: {
@@ -170,7 +170,7 @@ export function compileDocumentAuditCSV(
   auditTrail: ScrubAuditEntry[]
 ): string {
   const metaLines = [
-    `# SPEK AUDIT TELEMETRY EXPORT - ${metrics.generatedAt}`,
+    `# SPEIK AUDIT TELEMETRY EXPORT - ${metrics.generatedAt}`,
     `# DOCUMENT TITLE: "${metrics.title}"`,
     `# DOCUMENT HASH: ${metrics.documentHash}`,
     `# CHARS: ${metrics.characterCount} | WORDS: ${metrics.wordCount} | TOKENS: ${metrics.tokenEstimate} | READING TIME: ${metrics.readingDurationMinutes}m`,

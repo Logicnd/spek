@@ -363,7 +363,7 @@ export function generateStandaloneReport(options: StandaloneReportOptions): stri
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>${title} — Spek Standalone Report</title>
+        <title>${title} — Speik Standalone Report</title>
         <style>
           ${INDUSTRIAL_STYLES}
           ${KATEX_INLINE_CSS}
@@ -374,7 +374,7 @@ export function generateStandaloneReport(options: StandaloneReportOptions): stri
           <div class="brand-group">
             <span class="brand-badge">
               <span class="status-dot"></span>
-              SPEK // ARCHIVE
+              SPEIK // ARCHIVE
             </span>
             <div class="doc-meta">
               <span class="meta-pill">HASH: ${metrics.documentHash}</span>
@@ -474,7 +474,7 @@ export function generateStandaloneReport(options: StandaloneReportOptions): stri
     fullOutput = dummy.innerHTML;
   } else {
     // Fallback template serialization
-    fullOutput = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>${title} — Spek Standalone Report</title><style>${INDUSTRIAL_STYLES}${KATEX_INLINE_CSS}</style></head><body><div class="spek-topbar"><div class="brand-group"><span class="brand-badge"><span class="status-dot"></span>SPEK // ARCHIVE</span><div class="doc-meta"><span class="meta-pill">HASH: ${metrics.documentHash}</span><span class="meta-pill">OFFLINE RUNNABLE</span></div></div><div class="btn-group"><button class="action-btn" onclick="window.print()">Print / PDF</button><button class="action-btn" id="copyRawBtn">Copy Markdown</button></div></div><main class="spek-container"><header class="spek-header"><h1 class="doc-title">${title}</h1><div class="doc-stats-grid"><div class="stat-card"><div class="stat-label">Word Count</div><div class="stat-value">${metrics.wordCount} words</div></div><div class="stat-card"><div class="stat-label">Token Estimate</div><div class="stat-value">~${metrics.tokenEstimate} tokens</div></div><div class="stat-card"><div class="stat-label">Reading Time</div><div class="stat-value">${metrics.readingDurationMinutes} min</div></div><div class="stat-card"><div class="stat-label">Redactions</div><div class="stat-value">${metrics.scrubCount} items</div></div></div></header><article class="spek-content" id="spek-content-body"><!-- INJECT_CONTENT_HTML --></article></main><script>(function(){var raw=decodeURIComponent("${rawMarkdownEscaped}");var btn=document.getElementById("copyRawBtn");if(btn){btn.addEventListener("click",function(){navigator.clipboard.writeText(raw).then(function(){btn.textContent="Copied!";setTimeout(function(){btn.textContent="Copy Markdown";},2000);});});}})();</script></body></html>`;
+    fullOutput = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>${title} — Speik Standalone Report</title><style>${INDUSTRIAL_STYLES}${KATEX_INLINE_CSS}</style></head><body><div class="spek-topbar"><div class="brand-group"><span class="brand-badge"><span class="status-dot"></span>SPEIK // ARCHIVE</span><div class="doc-meta"><span class="meta-pill">HASH: ${metrics.documentHash}</span><span class="meta-pill">OFFLINE RUNNABLE</span></div></div><div class="btn-group"><button class="action-btn" onclick="window.print()">Print / PDF</button><button class="action-btn" id="copyRawBtn">Copy Markdown</button></div></div><main class="spek-container"><header class="spek-header"><h1 class="doc-title">${title}</h1><div class="doc-stats-grid"><div class="stat-card"><div class="stat-label">Word Count</div><div class="stat-value">${metrics.wordCount} words</div></div><div class="stat-card"><div class="stat-label">Token Estimate</div><div class="stat-value">~${metrics.tokenEstimate} tokens</div></div><div class="stat-card"><div class="stat-label">Reading Time</div><div class="stat-value">${metrics.readingDurationMinutes} min</div></div><div class="stat-card"><div class="stat-label">Redactions</div><div class="stat-value">${metrics.scrubCount} items</div></div></div></header><article class="spek-content" id="spek-content-body"><!-- INJECT_CONTENT_HTML --></article></main><script>(function(){var raw=decodeURIComponent("${rawMarkdownEscaped}");var btn=document.getElementById("copyRawBtn");if(btn){btn.addEventListener("click",function(){navigator.clipboard.writeText(raw).then(function(){btn.textContent="Copied!";setTimeout(function(){btn.textContent="Copy Markdown";},2000);});});}})();</script></body></html>`;
   }
 
   // Inject the pre-rendered HTML content into the document placeholder

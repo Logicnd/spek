@@ -266,7 +266,7 @@ function WorkbenchMain() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `${documentMetrics.title.replace(/[^a-z0-9]/gi, "_").toLowerCase()}_spek_runbook.html`;
+    a.download = `${documentMetrics.title.replace(/[^a-z0-9]/gi, "_").toLowerCase()}_speik_runbook.html`;
     a.click();
     URL.revokeObjectURL(url);
     setShowExportMenu(false);
@@ -288,7 +288,7 @@ function WorkbenchMain() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `${documentMetrics.title.replace(/[^a-z0-9]/gi, "_").toLowerCase()}_spek.md`;
+    a.download = `${documentMetrics.title.replace(/[^a-z0-9]/gi, "_").toLowerCase()}_speik.md`;
     a.click();
     URL.revokeObjectURL(url);
     setShowExportMenu(false);
@@ -310,7 +310,7 @@ function WorkbenchMain() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `spek_audit_${documentMetrics.documentHash}.json`;
+    a.download = `speik_audit_${documentMetrics.documentHash}.json`;
     a.click();
     URL.revokeObjectURL(url);
     setShowExportMenu(false);
@@ -332,7 +332,7 @@ function WorkbenchMain() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `spek_audit_${documentMetrics.documentHash}.csv`;
+    a.download = `speik_audit_${documentMetrics.documentHash}.csv`;
     a.click();
     URL.revokeObjectURL(url);
     setShowExportMenu(false);
@@ -355,7 +355,7 @@ function WorkbenchMain() {
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2 pr-3 border-r border-spek-border">
             <span className="w-2 h-2 rounded-full bg-spek-emerald animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.7)]" />
-            <span className="font-bold tracking-widest text-white text-sm">SPEK</span>
+            <span className="font-bold tracking-widest text-white text-sm">SPEIK</span>
             <span className="text-[10px] text-spek-dim font-normal">v1.0</span>
           </div>
 
@@ -413,7 +413,7 @@ function WorkbenchMain() {
           <button
             onClick={() => setShowHelpDrawer(true)}
             className="flex items-center gap-1.5 px-2.5 py-1 bg-spek-emerald/10 hover:bg-spek-emerald/20 border border-spek-emerald/30 text-emerald-400 rounded-sm text-[11px] font-mono transition-colors"
-            title="Open Spek Field Manual & Role Guide (For Business, DevOps, Architects & Beginners)"
+            title="Open Speik Field Manual & Role Guide (For Business, DevOps, Architects & Beginners)"
           >
             <HelpCircle className="w-3.5 h-3.5 text-spek-emerald" />
             <span className="font-semibold">ROLE MANUAL</span>
@@ -801,7 +801,7 @@ function WorkbenchMain() {
             [ ? FIELD MANUAL ]
           </button>
           <span className="text-[10px] text-spek-dim">
-            [SPEK v1.0 • ARCHITECTURE RUNBOOK WORKBENCH • ZERO CLOUD LEAKAGE]
+            [SPEIK v1.0 • ARCHITECTURE RUNBOOK WORKBENCH • ZERO CLOUD LEAKAGE]
           </span>
         </div>
       </footer>

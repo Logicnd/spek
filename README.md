@@ -1,8 +1,8 @@
-# Spek
+# Speik
 
 > **Industrial, offline-first Technical Runbook, Architecture RFC, and Data Report Workbench** built for developers, sysadmins, IT operations, and engineering leaders.
 
-Spek opens directly to the active workbench canvas with zero marketing hero sections, zero SaaS fluff, and zero telemetry data leakage.
+Speik opens directly to the active workbench canvas with zero marketing hero sections, zero SaaS fluff, and zero telemetry data leakage.
 
 ---
 

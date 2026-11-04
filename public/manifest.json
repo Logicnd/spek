@@ -1,6 +1,6 @@
 {
-  "name": "Spek — Technical Runbook & Architecture RFC Workbench",
-  "short_name": "Spek",
+  "name": "Speik — Technical Runbook & Architecture RFC Workbench",
+  "short_name": "Speik",
   "description": "Industrial, offline-first Technical Runbook, Architecture RFC, and Data Report Workbench built for developers, sysadmins, and IT engineers.",
   "start_url": "/",
   "display": "standalone",

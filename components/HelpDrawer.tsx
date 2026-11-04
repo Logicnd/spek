@@ -46,7 +46,7 @@ export const HelpDrawer: React.FC<HelpDrawerProps> = ({
           <div className="flex items-center gap-2">
             <HelpCircle className="w-4 h-4 text-spek-emerald" />
             <span className="font-bold text-white tracking-wider text-sm">
-              SPEK FIELD MANUAL // ROLE ADAPTOR
+              SPEIK FIELD MANUAL // ROLE ADAPTOR
             </span>
           </div>
           <button
@@ -112,7 +112,7 @@ export const HelpDrawer: React.FC<HelpDrawerProps> = ({
             <div className="space-y-4">
               <div className="p-3 bg-spek-elevated border border-spek-border rounded-sm">
                 <div className="font-semibold text-white text-sm mb-1 flex items-center justify-between">
-                  <span>How to use Spek for Business & Leadership</span>
+                  <span>How to use Speik for Business & Leadership</span>
                   <button
                     onClick={() => {
                       onSelectRole("business");
@@ -125,7 +125,7 @@ export const HelpDrawer: React.FC<HelpDrawerProps> = ({
                   </button>
                 </div>
                 <p className="text-spek-muted leading-relaxed text-xs">
-                  You don’t need to know code or math symbols. Use Spek to draft clean SLA reports, audit service uptime against contracts, monitor infrastructure spending, and export boardroom-ready PDFs.
+                  You don’t need to know code or math symbols. Use Speik to draft clean SLA reports, audit service uptime against contracts, monitor infrastructure spending, and export boardroom-ready PDFs.
                 </p>
               </div>
 
@@ -179,7 +179,7 @@ export const HelpDrawer: React.FC<HelpDrawerProps> = ({
             <div className="space-y-4">
               <div className="p-3 bg-spek-elevated border border-spek-border rounded-sm">
                 <div className="font-semibold text-white text-sm mb-1 flex items-center justify-between">
-                  <span>How to use Spek for IT & DevOps</span>
+                  <span>How to use Speik for IT & DevOps</span>
                   <button
                     onClick={() => {
                       onSelectRole("devops");
@@ -210,7 +210,7 @@ export const HelpDrawer: React.FC<HelpDrawerProps> = ({
                       <span className="text-[10px] text-spek-dim">XRegExp Engine</span>
                     </div>
                     <p className="text-spek-dim">
-                      Paste terminal logs containing AWS keys (<code className="text-red-300">AKIA...</code>), internal IPs (<code className="text-red-300">10.x.x.x</code>, <code className="text-red-300">192.168.x.x</code>), database URIs, or bearer tokens. Spek redacts them client-side in realtime before export.
+                      Paste terminal logs containing AWS keys (<code className="text-red-300">AKIA...</code>), internal IPs (<code className="text-red-300">10.x.x.x</code>, <code className="text-red-300">192.168.x.x</code>), database URIs, or bearer tokens. Speik redacts them client-side in realtime before export.
                     </p>
                   </div>
 
@@ -248,7 +248,7 @@ inventory-db,320.4
             <div className="space-y-4">
               <div className="p-3 bg-spek-elevated border border-spek-border rounded-sm">
                 <div className="font-semibold text-white text-sm mb-1 flex items-center justify-between">
-                  <span>How to use Spek for Systems Architecture</span>
+                  <span>How to use Speik for Systems Architecture</span>
                   <button
                     onClick={() => {
                       onSelectRole("architect");
@@ -305,7 +305,7 @@ $$`}
             <div className="space-y-4">
               <div className="p-3 bg-spek-elevated border border-spek-border rounded-sm">
                 <div className="font-semibold text-white text-sm mb-1 flex items-center justify-between">
-                  <span>How to use Spek if You're New or Learning</span>
+                  <span>How to use Speik if You're New or Learning</span>
                   <button
                     onClick={() => {
                       onSelectRole("student");
@@ -345,7 +345,7 @@ $$`}
                   <div className="p-2.5 bg-spek-bg border border-spek-border rounded-sm">
                     <div className="text-white font-medium mb-1">What does the Secret Scrubber do?</div>
                     <p className="text-spek-dim">
-                      If you type an IP address (like <code className="text-white">192.168.1.1</code>) or an email address, Spek safely shields it as <code className="text-red-300">[REDACTED_IP]</code> so you never accidentally expose private information.
+                      If you type an IP address (like <code className="text-white">192.168.1.1</code>) or an email address, Speik safely shields it as <code className="text-red-300">[REDACTED_IP]</code> so you never accidentally expose private information.
                     </p>
                   </div>
                 </div>
@@ -377,7 +377,7 @@ $$`}
 
         {/* Footer */}
         <div className="p-3 bg-spek-elevated border-t border-spek-border flex items-center justify-between text-spek-dim text-[11px]">
-          <span>Spek Technical Runbook Engine • 100% Offline Runnable</span>
+          <span>Speik Technical Runbook Engine • 100% Offline Runnable</span>
           <button
             onClick={onClose}
             className="px-3 py-1 bg-spek-subtle hover:bg-spek-border text-white border border-spek-border rounded-sm"
@@ -389,3 +389,4 @@ $$`}
     </div>
   );
 };
+

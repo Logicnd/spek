@@ -60,7 +60,7 @@ Given baseline variance $\\sigma = 48\\text{ms}$ and drift mean $\\mu = 192\\tex
 - Cluster Internal IP: \`10.244.0.15\`
 - Database URI: \`postgres://db_admin:P@ssw0rd99!@db-prod.internal.corp:5432/orders\`
 - AWS Deployment Role: \`AKIAIOSFODNN7EXAMPLE\`
-- Primary SRE Contact: \`incident-response@spek.systems\`
+- Primary SRE Contact: \`incident-response@speik.systems\`
 - Bearer Auth Probe: \`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFkbWluIn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\`
 
 ---
@@ -208,9 +208,9 @@ Audit verification executed from monitoring server \`172.16.254.1\` with reporti
     targetRole: "Engineers, Students & Contributors",
     summary: "Clear starter spec showing how to use Markdown, embed KaTeX formulas, render D3 graphs, and redact API keys.",
     recommendedTab: "markdown",
-    markdown: `# Spek — Industrial Offline-First Technical Workbench
+    markdown: `# Speik — Industrial Offline-First Technical Workbench
 
-Spek is a high-density, zero-marketing runbook, architecture RFC, and data report workbench engineered for developers, sysadmins, IT operations, and digital business leaders.
+Speik is a high-density, zero-marketing runbook, architecture RFC, and data report workbench engineered for developers, sysadmins, IT operations, and digital business leaders.
 
 ---
 

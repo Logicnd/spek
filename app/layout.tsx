@@ -10,11 +10,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://spek.systems"),
-  title: "Spek — Technical Runbook, Architecture RFC & Data Workbench",
+  metadataBase: new URL("https://speik.vercel.app"),
+  title: "Speik — Technical Runbook, Architecture RFC & Data Workbench",
   description:
     "Industrial, offline-first Technical Runbook, Architecture RFC, and Data Report Workbench built for developers, sysadmins, IT staff, and digital business managers.",
-  applicationName: "Spek",
+  applicationName: "Speik",
   keywords: [
     "Runbook",
     "Architecture RFC",
@@ -25,31 +25,31 @@ export const metadata: Metadata = {
     "D3.js",
     "Technical Documentation",
   ],
-  authors: [{ name: "Spek Systems" }],
+  authors: [{ name: "Speik Systems" }],
   manifest: "/manifest.json",
   icons: {
     icon: "/icon-192.svg",
     apple: "/icon-192.svg",
   },
   openGraph: {
-    title: "Spek — Industrial Technical Workbench",
+    title: "Speik — Industrial Technical Workbench",
     description:
       "Offline-first Runbook, Architecture RFC & Data Report Workbench for engineers and sysadmins.",
-    url: "https://spek.systems",
-    siteName: "Spek",
+    url: "https://speik.vercel.app",
+    siteName: "Speik",
     type: "website",
     images: [
       {
         url: "/icon-512.svg",
         width: 512,
         height: 512,
-        alt: "Spek Industrial Workbench",
+        alt: "Speik Industrial Workbench",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spek — Industrial Technical Workbench",
+    title: "Speik — Industrial Technical Workbench",
     description:
       "Offline-first Runbook, Architecture RFC & Data Report Workbench for engineers and sysadmins.",
     images: ["/icon-512.svg"],

@@ -1,5 +1,5 @@
-// Spek Offline-First Service Worker
-const CACHE_NAME = 'spek-v1.0.0';
+// Speik Offline-First Service Worker
+const CACHE_NAME = 'speik-v1.0.0';
 const OFFLINE_URL = '/';
 
 const PRECACHE_ASSETS = [
